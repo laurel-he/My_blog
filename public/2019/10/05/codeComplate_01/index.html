@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前期准备前期准备的重要性不要立即开始写代码，要做好必要的需求分析和架构设计，写好需求文档和技术文档，防止浪费时间和精力制造错误的东西 需求核对表针对功能需求： 1．是否详细定义了系统的全部输入，包括其来源、精度、取值范围、出现频率等？ 2．是否详细定义了系统的全部输出，包括其目的地、精度、取值范围、出现频率格式等？ 3．是否详细定义了所有的输出格式(如：web页面、报表等)？ 4．是否详细定义了所">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码大全">
+<meta property="og:url" content="https://www.hexiaojiao.top/2019/10/05/codeComplate_01/index.html">
+<meta property="og:site_name" content="贺小花的个人博客">
+<meta property="og:description" content="前期准备前期准备的重要性不要立即开始写代码，要做好必要的需求分析和架构设计，写好需求文档和技术文档，防止浪费时间和精力制造错误的东西 需求核对表针对功能需求： 1．是否详细定义了系统的全部输入，包括其来源、精度、取值范围、出现频率等？ 2．是否详细定义了系统的全部输出，包括其目的地、精度、取值范围、出现频率格式等？ 3．是否详细定义了所有的输出格式(如：web页面、报表等)？ 4．是否详细定义了所">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-10T01:49:46.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码大全">
+<meta name="twitter:description" content="前期准备前期准备的重要性不要立即开始写代码，要做好必要的需求分析和架构设计，写好需求文档和技术文档，防止浪费时间和精力制造错误的东西 需求核对表针对功能需求： 1．是否详细定义了系统的全部输入，包括其来源、精度、取值范围、出现频率等？ 2．是否详细定义了系统的全部输出，包括其目的地、精度、取值范围、出现频率格式等？ 3．是否详细定义了所有的输出格式(如：web页面、报表等)？ 4．是否详细定义了所">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.hexiaojiao.top/2019/10/05/codeComplate_01/">
+
+
+
+
+
+  <title>代码大全 | 贺小花的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">贺小花的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">2019-技术博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hexiaojiao.top/2019/10/05/codeComplate_01/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Laurel He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="贺小花的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">代码大全</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-05T10:40:10+08:00">
+                2019-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码大全/" itemprop="url" rel="index">
+                    <span itemprop="name">代码大全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/05/codeComplate_01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/10/05/codeComplate_01/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="前期准备的重要性"><a href="#前期准备的重要性" class="headerlink" title="前期准备的重要性"></a>前期准备的重要性</h3><p>不要立即开始写代码，要做好必要的需求分析和架构设计，写好需求文档和技术文档，防止浪费时间和精力制造错误的东西</p>
+<h3 id="需求核对表"><a href="#需求核对表" class="headerlink" title="需求核对表"></a>需求核对表</h3><p><strong>针对功能需求：</strong></p>
+<p>1．是否详细定义了系统的全部输入，包括其来源、精度、取值范围、出现频率等？</p>
+<p>2．是否详细定义了系统的全部输出，包括其目的地、精度、取值范围、出现频率格式等？</p>
+<p>3．是否详细定义了所有的输出格式(如：web页面、报表等)？</p>
+<p>4．是否详细定义了所有硬件及软件的外部接口？</p>
+<p>5．是否详细定义了全部外部通信接口，包括握手协议、纠错协议、通信协议等？</p>
+<p>6．是否列出了用户所要做的全部事情？</p>
+<p>7．是否详细定义了每个任务所用数据，以及每个任务得到的数据</p>
+<p><strong>针对非功能需求（质量需求）</strong></p>
+<p>1.是否为全部必要的操作，从用户的角度，详细描述的期望的响应时间 ？</p>
+<p>2.是否详细描述了其他与计时有关的考虑，如处理时间、数据传输率、系统吞吐量等？</p>
+<p>3.是否详细定义了安全级别</p>
+<p>4.是否详细定义了可靠性，包括软件失灵的后果、发生故障时需要保护的至关重要的信息、错误检查与回复的策略等？</p>
+<p>5.是否详细定义了机器内存和剩余硬盘空间最小值？</p>
+<p>6.是否详细定义了系统的可维护性，包括适应特定功能的变更、操作环境的变更、与其他软件接口变更的能力？</p>
+<p>7.是否包含对“成功”的定义，“失败”的定义？</p>
+<p><strong>需求的质量</strong></p>
+<ol>
+<li><p>需求是用户书写的吗？</p>
+</li>
+<li><p>每条需求都不与其他需求冲突吗？</p>
+</li>
+<li><p>是否详细定义了相互竞争的特性之间的权衡</p>
+</li>
+<li><p>是否避免在需求中规定设计(方案)</p>
+</li>
+<li><p>需求是否在详细程度上保持相当一致的水平？有些需求应当更详细的描述吗？有些需求应该更粗略的描述吗？</p>
+</li>
+<li><p>需求是否足够清晰，即使转交给一个独立的小组去构建，他们也能理解吗？开发者也这么想吗？</p>
+</li>
+<li><p>每个条款都与待解决的问题及解决方案相关吗？能从每个条款上溯到它的问题中的对应跟源吗？</p>
+</li>
+<li><p>是否每条需求都是可测试的？是否可应进行独立的测试，以检验满不满足各项需求</p>
+</li>
+<li><p>是否描述了所有可能对需求的改动，包括各项改动的可能性</p>
+</li>
+</ol>
+<p><strong>需求的完备性</strong></p>
+<p> 1.对于在开始开发之前无法获得信息，是否详细描述了信息不完全的区域？</p>
+<p> 2.需求的完备度是否达到这种程度：如果产品满足所有需求，那么它就是可接受的？</p>
+<p> 3.你对全部需求都感觉舒服吗？你是否已经去掉了那些不可能完成的需求—那些只是为了安抚客户和老板的东西？</p>
+<h3 id="花费在前期准备上的时间长度"><a href="#花费在前期准备上的时间长度" class="headerlink" title="花费在前期准备上的时间长度"></a>花费在前期准备上的时间长度</h3><p>花费在问题定义，需求分析，软件架构上的时间依据项目的需要而变化，一般占据10%-20%的工作量和20%-30%的时间</p>
+<h3 id="良好的类接口"><a href="#良好的类接口" class="headerlink" title="良好的类接口"></a>良好的类接口</h3><p>类的基础是抽象数据类型（我之前大部分时候没有使用抽象，只是把相关的方法和变量定义放在了一起，实际上是不符合面向对象变成原则的），抽象数据类型是指一些数据和<br>对这些数据所进行操作的集合。定义抽象类有助于代码规范，提高</p>
+<h3 id="创建类的原因"><a href="#创建类的原因" class="headerlink" title="创建类的原因"></a>创建类的原因</h3><p>（1）为显示世界中的对象建模<br>（2）为抽象的对象建模<br>（3）降低复杂度<br>（4）隔离复杂度<br>（5）隐藏实现细节<br>（6）让代码更易重用<br>（7）把相关的操作包装到一起</p>
+<h3 id="应当避免的类"><a href="#应当避免的类" class="headerlink" title="应当避免的类"></a>应当避免的类</h3><p>（1）避免创建万能类<br>（2）消除无关紧要的类<br>（3）避免用动词命名的类</p>
+<h2 id="防御式编程"><a href="#防御式编程" class="headerlink" title="防御式编程"></a>防御式编程</h2><h3 id="三种处理进入垃圾的情况"><a href="#三种处理进入垃圾的情况" class="headerlink" title="三种处理进入垃圾的情况"></a>三种处理进入垃圾的情况</h3><p>（1）检查所有来源于外部的数据的值<br>（2）检查所有子程序输入参数的值<br>（3）决定如何处理错误的输入数据</p>
+<h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><p>断言是指在开发期间使用的、让程序在运行时进行自检的代码</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>用异常通知程序的其他部分发生了不可忽略的错误<br>只有真正例外的情况下才抛出异常<br>不能用异常来推卸责任<br>避免在构造函数和析构函数中抛出异常，除非在同一地方把他们捕获<br>在恰当的抽象层次抛出异常</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>与《代码整洁之道》对变量的要求几乎一致</p>
+<h2 id="代码改善"><a href="#代码改善" class="headerlink" title="代码改善"></a>代码改善</h2><h3 id="软件质量的特性"><a href="#软件质量的特性" class="headerlink" title="软件质量的特性"></a>软件质量的特性</h3><p>外在特性：<br>（1）正确性：指系统规范、设计和实现方面的错误的稀少程度<br>（2）可用性：指用户学习和使用一个系统的容易程度<br>（3）效率：指软件是否尽可能少地占用系统资源，包括内存和执行时间<br>（4）可靠性：指在制定的必须条件下，一个系统完成所需要功能的能力-应该有很长的平均无故障时间<br>（5）完整性：限制、验证<br>（6）适应性：适应不同执行环境<br>（7）精确性：输出结果的精确程度<br>（8）健壮性：系统在接受无效输入或处于压力环境下持续正常运行的能力<br>内在特性：<br>（1）可维护性：指很容易能够对系统进行修改或新增功能，提高性能及修正缺陷<br>（2）灵活性：系统适用其他系统或者修改难易程度<br>（3）可移植性：运行环境的可移植性<br>（4）可重用性：指系统的某些部分可被应用到其他系统的难易程度<br>（5）可读性：指阅读或理解系统代码的难易程度，尤其是在细节语句的层次上<br>（6）可测试性：指的是可以进行何种程度的单元测试或者系统测试，以及在何种程度上验证系统是否符合需求<br>（7）可理解性：指在系统组织和细节语句的层次上理解整个系统的难易程度</p>
+<h3 id="协同构建"><a href="#协同构建" class="headerlink" title="协同构建"></a>协同构建</h3><h3 id="开发者测试"><a href="#开发者测试" class="headerlink" title="开发者测试"></a>开发者测试</h3><h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><h3 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h3><h3 id="软件工艺"><a href="#软件工艺" class="headerlink" title="软件工艺"></a>软件工艺</h3><h4 id="布局与风格"><a href="#布局与风格" class="headerlink" title="布局与风格"></a>布局与风格</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/04/commandMode/" rel="next" title="命令模式">
+                <i class="fa fa-chevron-left"></i> 命令模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/05/work/" rel="prev" title="工作经验总结">
+                工作经验总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Laurel He">
+            
+              <p class="site-author-name" itemprop="name">Laurel He</p>
+              <p class="site-description motion-element" itemprop="description">2019-技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/laurel-he" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9809769/laurel-he" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期准备的重要性"><span class="nav-number">1.1.</span> <span class="nav-text">前期准备的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求核对表"><span class="nav-number">1.2.</span> <span class="nav-text">需求核对表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#花费在前期准备上的时间长度"><span class="nav-number">1.3.</span> <span class="nav-text">花费在前期准备上的时间长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#良好的类接口"><span class="nav-number">1.4.</span> <span class="nav-text">良好的类接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建类的原因"><span class="nav-number">1.5.</span> <span class="nav-text">创建类的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应当避免的类"><span class="nav-number">1.6.</span> <span class="nav-text">应当避免的类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御式编程"><span class="nav-number">2.</span> <span class="nav-text">防御式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种处理进入垃圾的情况"><span class="nav-number">2.1.</span> <span class="nav-text">三种处理进入垃圾的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断言"><span class="nav-number">2.2.</span> <span class="nav-text">断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">2.3.</span> <span class="nav-text">异常</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码改善"><span class="nav-number">4.</span> <span class="nav-text">代码改善</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件质量的特性"><span class="nav-number">4.1.</span> <span class="nav-text">软件质量的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协同构建"><span class="nav-number">4.2.</span> <span class="nav-text">协同构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发者测试"><span class="nav-number">4.3.</span> <span class="nav-text">开发者测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试"><span class="nav-number">4.4.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构"><span class="nav-number">4.5.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件工艺"><span class="nav-number">4.6.</span> <span class="nav-text">软件工艺</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#布局与风格"><span class="nav-number">4.6.1.</span> <span class="nav-text">布局与风格</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Laurel He</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'laurel-he',
+            repo: 'comment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '4dc2cf7a22ea805eb9ae66ae91fb91f650198dc5',
+            
+                client_id: 'df7a2f0566286c8f8493'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
